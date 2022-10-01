@@ -1,59 +1,4 @@
-// import React from 'react';
-// import styled from 'styled-components';
-// import { useRouter } from 'next/router';
-// import Link from 'next/link';
-
-// const HeaderNav = () => {
-//     const Router = useRouter();
-//     return (
-//         <HeaderNavWrapper>
-//             <Link href={'/'}><HeaderNavLinks active={Router.pathname == "/" ? true : false}>
-//                 Campaigns
-//             </HeaderNavLinks></Link>
-
-//             <Link href={'/createcampaign'}><HeaderNavLinks active={Router.pathname == "/createcampaign" ? true : false}>
-//                 Create Campaigns
-//             </HeaderNavLinks></Link>
-
-//             <Link href={'/dashboard'}><HeaderNavLinks active={Router.pathname == "/dashboard" ? true : false}>
-//                 Dashboard
-//             </HeaderNavLinks></Link>
-
-//         </HeaderNavWrapper>
-//     )
-// }
-
-// const HeaderNavWrapper = styled.div`
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-between;
-//     background-color: ${(props) => props.theme.bgDiv};
-//     border-radius: 10px;
-//     padding: 6px;
-//     height: 50%;
-// `;
-
-// const HeaderNavLinks = styled.div`
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-between;
-//     background-color: ${(props) => props.active ? props.theme.bgSubDiv : props.theme.bgDiv};
-//     height:100%;
-//     font-family: 'Rubik', sans-serif;
-//     margin: 5px;
-//     border-radius: 10px;
-//     padding: 0 5px 0 5px;
-//     cursor: pointer;
-//     font-weight: bold;
-//     font-size: small;
-
-// `;
-
-// export default HeaderNav;
-
-
 import * as React from "react";
-import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
@@ -67,8 +12,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+
 
 
 const drawerWidth = 240;

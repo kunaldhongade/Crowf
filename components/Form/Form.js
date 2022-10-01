@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 import FormInput from './Components/FormInput';
-import Card from '@mui/material/Card';
 import { createContext, useState } from 'react';
-import { TailSpin } from 'react-loader-spinner';
 import { ethers } from 'ethers';
 import { toast } from 'react-toastify';
 import CampaignFactory from '../../artifacts/contracts/Campaign.sol/CampaignFactory.json'
@@ -12,10 +10,6 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Stack from '@mui/material/Stack';
 import LinearProgress from '@mui/material/LinearProgress';
-import CardMedia from "@mui/material/CardMedia";
-import CircularProgress from '@mui/material/CircularProgress';
-import { Campaign } from '@mui/icons-material';
-import Image from "next/image";
 
 
 
@@ -155,13 +149,6 @@ const FormWrapper = styled.div`
 
 `
 
-const Title = styled.div`
-    font-family: 'Rubik', sans-serif;
-    font-size: medium;
-    display: flex;
-    justify-content:center;
-`
-
 const FormMain = styled.div`
     width:80%;
 `
@@ -172,13 +159,6 @@ const FormInputsWrapper = styled.div`
     margin-top:10px ;
 `
 
-const Spinner = styled.div`
-    width:100%;
-    display:flex ;
-    justify-content:center ;
-    align-items:center ;
-    padding:10%; 
-`
 const Address = styled.div`
     width:100%;
     height:80vh;

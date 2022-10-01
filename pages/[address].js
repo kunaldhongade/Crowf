@@ -86,116 +86,122 @@ export default function Detail({ Data, DonationsData }) {
     }
 
     return (
-        <Box sx={{ flexGrow: 1, margin: "10%" }}>
-            <Head>
-                <meta name="description" content="Campaign's Detail" />
-                <link rel="icon" href="/logo.png" />
-            </Head>
-            <Grid container spacing={2}>
-                <Grid item xs={12} md={8} sm={6}>
-                    <Card>
-                        <CardActionArea>
-                            <CardMedia
-                                component="img"
-                                width="40vh"
-                                layout="fill"
-                                src={
-                                    "https://crowf.infura-ipfs.io/ipfs/" + Data.image
-                                }
-                                alt="Campaign Image"
-                            />
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="div" sx={{ textAlign: "center", paddingTop: 1 }}>
-                                    {Data.title}
+        <>
+            <Box sx={{ flexGrow: 1, margin: "10%" }}>
+                <Head>
+                    <meta name="description" content="Campaign's Detail" />
+                    <link rel="icon" href="/logo.png" />
+                </Head>
+                <Grid container spacing={2}>
+                    <Grid item xs={12} md={8} sm={6}>
+                        <Card>
+                            <CardActionArea>
+                                <CardMedia
+                                    component="img"
+                                    width="40vh"
+                                    layout="fill"
+                                    src={
+                                        "https://crowf.infura-ipfs.io/ipfs/" + Data.image
+                                    }
+                                    alt="Campaign Image"
+                                />
+                                <CardContent>
+                                    <Typography gutterBottom variant="h5" component="div" sx={{ textAlign: "center", paddingTop: 1 }}>
+                                        {Data.title}
+                                    </Typography>
+                                </CardContent>
+                            </CardActionArea>
+                        </Card>
+                    </Grid>
+                    <Grid item xs={12} md={4} sm={6}>
+                        <Card>
+                            <CardActionArea>
+                                <TextField
+                                    id="outlined-basic"
+                                    label="Donate please..🙏"
+                                    variant="outlined"
+                                    placeholder="...in Matic"
+                                    fullWidth
+                                    type="number"
+                                    value={amount}
+                                    onChange={(e) => setAmount(e.target.value)}
+                                /><br></br><br />
+                                <Button sx={{
+                                    backgroundColor: "#9c27b0", color: "#fff", fontFamily: 'Russo One', fontSize: "large", "&:hover": {
+                                        backgroundColor: "#4a148c",
+                                    }
+                                }} onClick={DonateFunds} fullWidth >
+                                    Donate
+                                </Button>
+                                <br />
+                                <br />
+                                <br />
+
+                                <Typography
+                                    variant="body1"
+                                    sx={{ fontSize: 20, textAlign: "center" }}
+                                >
+                                    Required Amount : {Data.requiredAmount} Matic
                                 </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                    </Card>
-                </Grid>
-                <Grid item xs={12} md={4} sm={6}>
-                    <Card>
-                        <CardActionArea>
-                            <TextField
-                                id="outlined-basic"
-                                label="Donate please..🙏"
-                                variant="outlined"
-                                placeholder="...in Matic"
-                                fullWidth
-                                type="number"
-                                value={amount}
-                                onChange={(e) => setAmount(e.target.value)}
-                            /><br></br><br />
-                            <Button sx={{ backgroundColor: "#9c27b0", color: "#fff", fontFamily: 'Russo One', fontSize: "large", }} onClick={DonateFunds} fullWidth >
-                                Donate
-                            </Button>
-                            <br />
-                            <br />
-                            <br />
-
+                                <Divider />
+                                <Typography
+                                    variant="body1"
+                                    sx={{ fontSize: 20, textAlign: "center" }}
+                                >
+                                    Received Amount : {Data.receivedAmount} Matic
+                                </Typography>
+                                <br />
+                                <Donated>
+                                    <LiveDonation><Divider />
+                                        <DonationTitle>Recent Donation</DonationTitle><Divider />
+                                        {DonationsData.map((e) => {
+                                            return (
+                                                <Donation key={e.timestamp}>
+                                                    <DonationData>{e.donar.slice(0, 6)}...{e.donar.slice(39)}</DonationData>
+                                                    <DonationData>{e.amount} Matic</DonationData>
+                                                    <DonationData>{new Date(e.timestamp * 1000).toLocaleString()}</DonationData>
+                                                </Donation>
+                                            )
+                                        })
+                                        }
+                                    </LiveDonation>
+                                    <MyDonation>
+                                        <Divider />
+                                        <DonationTitle>My Past Donation</DonationTitle>
+                                        <Divider />
+                                        {mydonations.map((e) => {
+                                            return (
+                                                <Donation key={e.timestamp}>
+                                                    <DonationData>{e.donar.slice(0, 6)}...{e.donar.slice(39)}</DonationData>
+                                                    <DonationData>{e.amount} Matic</DonationData>
+                                                    <DonationData>{new Date(e.timestamp * 1000).toLocaleString()}</DonationData>
+                                                </Donation>
+                                            )
+                                        })
+                                        }
+                                    </MyDonation>
+                                </Donated>
+                            </CardActionArea>
+                        </Card>
+                    </Grid>
+                    <Grid item xs={12} md={8} sm={6}>
+                        <Card sx={{ minHeight: "135px" }}>
                             <Typography
                                 variant="body1"
-                                sx={{ fontSize: 20, textAlign: "center" }}
+                                sx={{ fontSize: 21, textAlign: "center" }}
                             >
-                                Required Amount : {Data.requiredAmount} Matic
+                                Story
                             </Typography>
-                            <Divider />
-                            <Typography
-                                variant="body1"
-                                sx={{ fontSize: 20, textAlign: "center" }}
-                            >
-                                Received Amount : {Data.receivedAmount} Matic
+                            <Divider /><br />
+                            <Typography variant="body2" sx={{ justifyContent: "space-around", fontSize: 18 }}>
+                                {story}
                             </Typography>
-                            <br />
-                            <Donated>
-                                <LiveDonation><Divider />
-                                    <DonationTitle>Recent Donation</DonationTitle><Divider />
-                                    {DonationsData.map((e) => {
-                                        return (
-                                            <Donation key={e.timestamp}>
-                                                <DonationData>{e.donar.slice(0, 6)}...{e.donar.slice(39)}</DonationData>
-                                                <DonationData>{e.amount} Matic</DonationData>
-                                                <DonationData>{new Date(e.timestamp * 1000).toLocaleString()}</DonationData>
-                                            </Donation>
-                                        )
-                                    })
-                                    }
-                                </LiveDonation>
-                                <MyDonation>
-                                    <Divider />
-                                    <DonationTitle>My Past Donation</DonationTitle>
-                                    <Divider />
-                                    {mydonations.map((e) => {
-                                        return (
-                                            <Donation key={e.timestamp}>
-                                                <DonationData>{e.donar.slice(0, 6)}...{e.donar.slice(39)}</DonationData>
-                                                <DonationData>{e.amount} Matic</DonationData>
-                                                <DonationData>{new Date(e.timestamp * 1000).toLocaleString()}</DonationData>
-                                            </Donation>
-                                        )
-                                    })
-                                    }
-                                </MyDonation>
-                            </Donated>
-                        </CardActionArea>
-                    </Card>
-                </Grid>
-                <Grid item xs={12} md={8} sm={6}>
-                    <Card sx={{ minHeight: "135px" }}>
-                        <Typography
-                            variant="body1"
-                            sx={{ fontSize: 21, textAlign: "center" }}
-                        >
-                            Story
-                        </Typography>
-                        <Divider /><br />
-                        <Typography variant="body2" sx={{ justifyContent: "space-around", fontSize: 18 }}>
-                            {story}
-                        </Typography>
-                    </Card>
-                </Grid>
+                        </Card>
+                    </Grid>
 
-            </Grid>
-        </Box >
+                </Grid>
+            </Box >
+        </>
     );
 }
 

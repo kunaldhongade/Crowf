@@ -8,8 +8,6 @@ import Box from "@mui/material/Box";
 import TextareaAutosize from "@mui/material/TextareaAutosize";
 import TextField from "@mui/material/TextField";
 import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
 import styled from "styled-components";
 import SendIcon from '@mui/icons-material/Send';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
@@ -18,8 +16,7 @@ import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import { fontSize } from '@mui/system';
-import { PaddingSharp } from '@mui/icons-material';
+
 
 const projectId = process.env.NEXT_PUBLIC_IPFS_ID;
 const projectSecret = process.env.NEXT_PUBLIC_IPFS_KEY;
@@ -146,7 +143,11 @@ const FormInput = () => {
                             </Button> :
                             <Button size="small" style={{ cursor: "no-drop", color: "#9c27b0" }}>IPFS..👍</Button>
                 }
-                <Button size="small" sx={{ backgroundColor: "#9c27b0" }} variant="contained" onClick={Handler.startCampaign} endIcon={<SendIcon />}>
+                <Button size="small" sx={{
+                    backgroundColor: "#9c27b0", "&:hover": {
+                        backgroundColor: "#4a148c",
+                    }
+                }} variant="contained" onClick={Handler.startCampaign} endIcon={<SendIcon />}>
                     Create
                 </Button>
             </CardActions>
