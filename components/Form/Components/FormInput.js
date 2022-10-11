@@ -144,7 +144,8 @@ const FormInput = () => {
                             <Button size="small" style={{ cursor: "no-drop", color: "#9c27b0" }}>IPFS..👍</Button>
                 }
                 <Button size="small" sx={{
-                    backgroundColor: "#9c27b0", "&:hover": {
+                    backgroundColor: "#9c27b0",
+                    "&:hover": {
                         backgroundColor: "#4a148c",
                     }
                 }} variant="contained" onClick={Handler.startCampaign} endIcon={<SendIcon />}>

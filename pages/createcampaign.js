@@ -16,4 +16,4 @@ const createcampaign = () => {
     )
 }
 
-export default createcampaign
+export default createcampaign;
