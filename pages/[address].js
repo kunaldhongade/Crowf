@@ -127,7 +127,8 @@ export default function Detail({ Data, DonationsData }) {
                                     onChange={(e) => setAmount(e.target.value)}
                                 /><br></br><br />
                                 <Button sx={{
-                                    backgroundColor: "#9c27b0", color: "#fff", fontFamily: 'Russo One', fontSize: "large", "&:hover": {
+                                    backgroundColor: "#9c27b0", color: "#fff", fontFamily: 'Russo One', fontSize: "large",
+                                    "&:hover": {
                                         backgroundColor: "#4a148c",
                                     }
                                 }} onClick={DonateFunds} fullWidth >

@@ -9,6 +9,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
+import GoogleIcon from "@mui/icons-material/Google";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
@@ -149,7 +150,7 @@ function Header(props) {
                 key={"Google Login"}
                 sx={{ color: "#fff" }}
               >
-                Login with google
+                <GoogleIcon />
               </Button>
             )}
             <Button key={"Connect Wallet"} sx={{ color: "#fff" }}>

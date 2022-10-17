@@ -86,9 +86,10 @@ export default function Index({ AllData, ArtData, FilmData, IdeationData, Startu
                   </CardContent>
                   <CardActions>
                     <Link passHref href={'/' + e.address}>
-                      <Button size="small" sx={{
-                        color: "#9c27b0"
-                      }}>Check</Button>
+                      <Button size="small"
+                        sx={{
+                          color: "#9c27b0"
+                        }}>Check</Button>
                     </Link>
                   </CardActions>
                 </Card>
