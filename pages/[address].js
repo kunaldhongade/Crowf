@@ -17,8 +17,6 @@ import TextField from "@mui/material/TextField";
 import Divider from "@mui/material/Divider";
 import Head from "next/head";
 
-
-
 export default function Detail({ Data, DonationsData }) {
     const [mydonations, setMydonations] = useState([]);
     const [story, setStory] = useState('');
@@ -94,8 +92,8 @@ export default function Detail({ Data, DonationsData }) {
                 </Head>
                 <Grid container spacing={2}>
                     <Grid item xs={12} md={8} sm={6}>
-                        <Card>
-                            <CardActionArea>
+                        <Card className="no-pointer-event">
+                            <CardActionArea >
                                 <CardMedia
                                     component="img"
                                     width="40vh"

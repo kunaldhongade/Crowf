@@ -10,6 +10,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import GoogleIcon from '@mui/icons-material/Google';
+import LogoutIcon from '@mui/icons-material/Logout';
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
@@ -75,9 +76,29 @@ function Header(props) {
                         </span>
                     </Link>
                 </ListItem>
-
-                <ListItem key={"Connect Wallet"} sx={{ paddingLeft: 2 }}>
-                    <Wallet />
+                <ListItem key={"Google auth"}>
+                    {status === "authenticated" ? (
+                        <Button
+                            onClick={() => signOut()}
+                            key={"Logout"}
+                            sx={{ color: "#000" }}
+                        >
+                            <LogoutIcon />
+                        </Button>
+                    ) : (
+                        <Button
+                            onClick={() => signIn("google")}
+                            key={"Google Login"}
+                            sx={{ color: "#000" }}
+                        >
+                            <GoogleIcon />
+                        </Button>
+                    )}
+                </ListItem>
+                <ListItem key={"Connect Wallet"}>
+                    <Button sx={{ color: "#000" }}>
+                        <Wallet />
+                    </Button>
                 </ListItem>
             </List>
         </Box>
@@ -142,7 +163,7 @@ function Header(props) {
                                 key={"Logout"}
                                 sx={{ color: "#fff" }}
                             >
-                                Sign Out
+                                <LogoutIcon />
                             </Button>
                         ) : (
                             <Button

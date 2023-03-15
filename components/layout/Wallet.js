@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { ethers } from "ethers";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import WalletIcon from '@mui/icons-material/Wallet';
 
 
@@ -23,6 +23,9 @@ const Wallet = () => {
     const [address, setAddress] = useState("");
     const [balance, setBalance] = useState("");
 
+    useEffect(() => {
+        connectWallet()
+    }, [])
 
     const connectWallet = async () => {
         await window.ethereum.request({ method: "eth_requestAccounts" });
@@ -45,8 +48,9 @@ const Wallet = () => {
 
     };
 
+
     return (
-        <ConnectWalletWrapper onClick={connectWallet}>
+        <ConnectWalletWrapper onClick={connectWallet} >
             {balance == '' ? <Balance></Balance> : <Balance> {balance.slice(0, 4)} Matic</Balance>}
             {address == '' ? <WalletIcon /> : <Address>{address.slice(0, 6)}...{address.slice(39)}</Address>}
         </ConnectWalletWrapper>
