@@ -1,21 +1,21 @@
-import styled from 'styled-components';
-import { ethers } from 'ethers';
-import CampaignFactory from '../artifacts/contracts/Campaign.sol/CampaignFactory.json';
-import { useState } from 'react';
-import Link from 'next/link';
 import { Button } from '@mui/material';
-import Head from "next/head";
+import Box from '@mui/material/Box';
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
+import FormControl from '@mui/material/FormControl';
 import Grid from "@mui/material/Grid";
-import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import Typography from "@mui/material/Typography";
+import { ethers } from 'ethers';
+import Head from "next/head";
+import Link from 'next/link';
+import { useState } from 'react';
+import styled from 'styled-components';
+import CampaignFactory from '../artifacts/contracts/Campaign.sol/CampaignFactory.json';
 
 
 export default function Index({ AllData, ArtData, FilmData, IdeationData, StartupData, TechData, OthersData }) {
@@ -101,8 +101,6 @@ export default function Index({ AllData, ArtData, FilmData, IdeationData, Startu
     </HomeWrapper>
   )
 }
-
-
 
 export async function getStaticProps() {
   const provider = new ethers.providers.JsonRpcProvider(

@@ -58,6 +58,6 @@
   "description": "Project Based Crowd funding",
   "main": "index.js",
   "repository": "https://github.com/kunaldhongade/Crowf",
-  "author": "Kunal Dhongade <74715881+kunaldhongade@users.noreply.github.com>",
+  "author": "Kunal Dhongade",
   "license": "MIT"
 }

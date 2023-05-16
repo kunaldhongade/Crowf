@@ -1,6 +1,9 @@
-import { useSession, signIn, signOut } from "next-auth/react";
+import GoogleIcon from '@mui/icons-material/Google';
+import LogoutIcon from '@mui/icons-material/Logout';
+import MenuIcon from "@mui/icons-material/Menu";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
@@ -8,16 +11,13 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import MenuIcon from "@mui/icons-material/Menu";
-import GoogleIcon from '@mui/icons-material/Google';
-import LogoutIcon from '@mui/icons-material/Logout';
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import { useRouter } from "next/router";
-import Wallet from "./Wallet.js";
+import { signIn, signOut, useSession } from "next-auth/react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import * as React from "react";
+import Wallet from "./Wallet.js";
 
 const drawerWidth = 240;
 
@@ -76,7 +76,7 @@ function Header(props) {
                         </span>
                     </Link>
                 </ListItem>
-                <ListItem key={"Google auth"}>
+                {/* <ListItem key={"Google auth"}>
                     {status === "authenticated" ? (
                         <Button
                             onClick={() => signOut()}
@@ -94,7 +94,7 @@ function Header(props) {
                             <GoogleIcon />
                         </Button>
                     )}
-                </ListItem>
+                </ListItem> */}
                 <ListItem key={"Connect Wallet"}>
                     <Button sx={{ color: "#000" }}>
                         <Wallet />
@@ -157,7 +157,7 @@ function Header(props) {
                                 </span>
                             </Link>
                         </Button>
-                        {status === "authenticated" ? (
+                        {/* {status === "authenticated" ? (
                             <Button
                                 onClick={() => signOut()}
                                 key={"Logout"}
@@ -173,7 +173,7 @@ function Header(props) {
                             >
                                 <GoogleIcon />
                             </Button>
-                        )}
+                        )} */}
                         <Button key={"Connect Wallet"} sx={{ color: "#fff" }}>
                             <Wallet />
                         </Button>
