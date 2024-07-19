@@ -1,7 +1,7 @@
-  CrowF - Decentralized Crowdfunding Platform
-
 CrowF - Decentralized Crowdfunding Platform
 ===========================================
+
+![alt text](https://devfolio.co/_next/image?url=https%3A%2F%2Fassets.devfolio.co%2Fprojects%2F4abf7440e8154d5c8f47618f97c92c70%2F58f3ebd2-a48d-4f0a-a80c-6bc539b05bd0.jpeg&w=1440&q=75)
 
 Project Overview
 ----------------
